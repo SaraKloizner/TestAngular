@@ -1,0 +1,47 @@
+<div>
+    <h3>ריכוז מידע בתהליך</h3>
+</div>
+<div class="div_style">
+    <div>
+        <span>פרטי מבוטח:</span>
+    </div>
+    <div>
+        <span>{{contact.firstName}}</span>
+    </div>
+    <div>
+        <span>{{contact.lastName}}</span>
+    </div>
+    <div>
+        <span>{{contact.identity}}</span>
+    </div>
+    <div>
+        <span>{{contact.age}}</span>
+    </div>
+    <div>
+        <span>{{contact.address}}</span>
+    </div>
+    <div>
+        <span>{{contact.type}}</span>
+    </div>
+</div>
+<div>
+    <h3>ריכוז אנשי קשר</h3>
+</div>
+<div class="div_style">
+    <div>
+        <span>מספר אנשי קשר בתהליך</span>
+        <span>{{this.contactservice.contact_list.length}}</span>
+    </div>
+    <div>
+        <span>פעולות אפשריות:</span>
+    </div>
+    <div>
+        <button (click)="addToContacts()">הוספת מבוטח</button>
+    </div>
+    <div>
+        <button (click)="deleteContacts()">איפוס מלא</button>
+    </div>
+    <div>
+        <button (click)="resetContacts()">איפוס אנשי קשר</button>
+    </div>
+</div>

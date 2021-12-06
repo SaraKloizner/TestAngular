@@ -1,0 +1,85 @@
+<div>
+    <h3>אנשי קשר</h3>
+</div>
+<div class="div_style">
+    <table>
+        <thead>
+            <tr>
+                <th>שם איש קשר</th>
+                <th>סוג</th>
+                <th>כתובת</th>
+                <th>טלפון נייד</th>
+                <th>דוא"ל</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of contactservice.contact_list;">
+                <td>{{item.firstName +" "+ item.lastName}}</td>
+                <td>{{ item.type}}</td>
+                <td>{{ item.address}}</td>
+                <td>{{ item.cellPhone | phoneFormat}}</td>
+                <td>{{ item.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button (click)="isOpen=true">הוסף איש קשר</button>
+        <div *ngIf="isOpen">
+            <form (onSubmit)="addNewContact()">
+                <div>
+                    <label for="firstname">
+                        firstName
+                    </label>
+                    <input id="firstname" name="firstname" [(ngModel)]="firstname" type="text">
+                </div>
+                <div>
+                    <label for="lastname">
+                        lastname
+                    </label>
+                    <input id="lastname" name="lastname" [(ngModel)]="lastname" type="text">
+                </div>
+                <div>
+                    <label for="identity">
+                        identity
+                    </label>
+                    <input id="identity" name="identity" [(ngModel)]="identity" type="text">
+                </div>
+                <div>
+                    <label for="age">
+                        age
+                    </label>
+                    <input id="age" name="age" [(ngModel)]="age" type="text">
+                </div>
+                <div>
+                    <label for="address">
+                        Address
+                    </label>
+                    <input id="address" name="address" [(ngModel)]="address" type="text">
+                </div>
+                <div>
+                    <label for="type">
+                        type
+                    </label>
+                    <input id="type" name="type" [(ngModel)]="type" type="text">
+                </div>
+                <div>
+                    <label for="cellPhone">
+                        cellPhone
+                    </label>
+                    <input id="cellPhone" name="cellPhone" [(ngModel)]="cellPhone" type="text">
+                </div>
+                <div>
+                    <label for="email">
+                        email
+                    </label>
+                    <input id="email" name="email" [(ngModel)]="email" type="text">
+                </div>
+
+
+
+                <button (click)="addNewContact()">ok</button>
+
+            </form>
+        </div>
+    </div>
+</div>
